@@ -1,0 +1,50 @@
+.square {
+	border: 1px  #999;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+	padding: 0;
+	margin: 1px;
+	text-align: center;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+}
+
+.card-img {
+	max-height: 28.5vh;
+	border-radius: 5%;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+}
+
+.card-img:hover {
+	outline: 2px solid rgba(0,255,0,1);
+}
+
+.card-img[data-highlighted=true] {
+	outline: 2px solid rgba(0,255,0,1);
+}
+
+.draft-area {
+	border-collapse: collapse;
+	max-height: 90vh;
+	right: 0;
+}
+
+.selectorXImage, .selectorYImage {
+	content: url("../images/GameSymbols/NISEI_CREDIT.svg"); 
+}
+
+.selectorXImage {
+	width: 40px;
+	transform: rotate(270deg);
+}
+
+.selectorYImage {
+	height: 40px;
+}
+
+.kbd-navigation .square:focus {
+	background: #000;
+	filter: invert(100%);
+}

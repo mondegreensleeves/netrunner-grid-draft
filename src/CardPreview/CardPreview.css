@@ -1,0 +1,91 @@
+.CardPreview {
+	width: -webkit-fill-available;
+	max-width: 30%;
+	border: 2px solid #999;
+	border-radius: 10px;
+	font-weight: 900;
+	overflow: auto;
+	background: rgba(192,192,192,.8);
+	height: 95vh;
+	text-align: center;
+}
+
+.CardPreviewImgPane {
+	display: block;
+	position: relative;
+	width: auto;
+}
+
+.CardPreviewImg {
+	display: block;
+	max-height: 40vh;
+	padding: 5px;
+	max-width: 95%;
+	border-radius: 5%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.CardPreviewTitle {
+	font-size: 24px;
+	line-height: 40px;
+}
+
+.CardPreviewType {
+	font-size: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.CardPreviewStats {
+	display: flex;
+}
+
+.CardPreviewStats > div {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.CardPreviewStatsIcons {
+	width: 0px;
+	font-size: 30px;
+	display: flex;
+}
+
+.CardPreviewStatIcon {
+	margin: 5px;
+	font-size: 30px;
+	display: flex;
+}
+
+.CardPreviewStatsNoIcons:empty, .CardPreviewStatsIcons:empty {
+	width: 0px;
+	margin: 0px;
+}
+
+.CardPreviewStatsNoIcons {
+	margin-top: 5px;
+}
+
+.CardPreviewStatNoIcon {
+	vertical-align: middle;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.CardPreviewStatNoIcon[data-stat="strength"] {
+	font-size: 20px;
+	margin-top: 9px;
+}
+
+.CardPreviewText {
+	text-align: left;
+	font-weight: 500;
+	font-size: 24px;
+	margin: 5px;	
+}
+
+.CardPreviewTextLine + .CardPreviewTextLine {
+	margin-top: 10px;
+}

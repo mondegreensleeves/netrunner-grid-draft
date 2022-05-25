@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>netrunner-grid-draft</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/images/background.png</name>
+			<type>1</type>
+			<location>C:/Users/mondegreensleeves/netrunner-grid-draft/src/background.png</location>
+		</link>
+		<link>
+			<name>src/images/GameSymbols/background.png</name>
+			<type>1</type>
+			<location>C:/Users/mondegreensleeves/netrunner-grid-draft/src/background.png</location>
+		</link>
+	</linkedResources>
+</projectDescription>

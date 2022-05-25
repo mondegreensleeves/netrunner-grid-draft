@@ -1,0 +1,122 @@
+	/**
+		Generates card stats into text form for card preview
+	 */
+//	generateAltStats(cardInfo) {
+//		
+//		let altStats = cardInfo['title'] + "\n";
+//		altStats = (altStats + (cardInfo['uniqueness'] ? "UNIQUE\n" : ""));
+//		altStats = (altStats + cardInfo['type_code'][0].toUpperCase() + cardInfo['type_code'].slice(1) + 
+//			(cardInfo['keywords'] ? ": " + cardInfo['keywords'] : "") + "\n");
+//		altStats += (cardInfo["faction_code"]);
+//		altStats += (cardInfo["faction_cost"] ? " - " + cardInfo["faction_cost"] + " Influence" : "");
+//		altStats += "\n";
+//		switch (cardInfo['type_code']) {
+//			case "agenda":
+//				altStats = (altStats + "Advancement Cost: " + cardInfo['advancement_cost'] + " - Agenda Points: " + cardInfo['agenda_points']);
+//				break;
+//			case "identity":
+//				altStats = (altStats + "Minimum Deck Size: " + cardInfo['minimum_deck_size'] 
+//					+ " - Influence Limit: " + cardInfo['influence_limit']
+//					+ (cardInfo["side_code"] === "runner" ? "\nBase Link: " + cardInfo['base_link'] : ""));
+//				break;
+//			case "operation":
+//			case "event":
+//				altStats = (altStats + "Play Cost: " + cardInfo['cost']);
+//				break;
+//			case "program":
+//				altStats = (altStats + "Install Cost: " + cardInfo['cost'] + " - MU: " + cardInfo['memory_cost']);
+//				altStats = (altStats + (cardInfo['strength'] ? " - Strength: " + cardInfo['strength'] : ""));
+//				break;
+//			case "hardware":
+//			case "resource":
+//				altStats = (altStats + "Install Cost: " + cardInfo['cost']);
+//				break;
+//			case "asset":
+//			case "upgrade":
+//				altStats = (altStats + "Rez Cost: " + cardInfo['cost']);
+//				break;
+//			case "ice":
+//				altStats = (altStats + "Rez Cost: " + cardInfo['cost'] + " - Strength: " + cardInfo['strength']);
+//				break;
+//			default:
+//				break;
+//		}
+//		altStats = (altStats + (cardInfo['trash_cost'] ? "\nTrash Cost:" + cardInfo['trash_cost'] : ""));
+//		return altStats;
+//	}
+	
+	generateAltStats(cardInfo) {
+		const toCheck = [
+			"base_link",
+			"advancement_cost",
+			"agenda_points",
+			"mu",
+			"trash_cost"
+		]
+		let altStats = [];
+		altStats.push([<SymbolRenderer symbol={ cardInfo["faction_code"] } location="cardPreviewStats" />,cardInfo["title"]]);		
+		switch (cardInfo["type_code"]) {
+			case "asset":
+			case "ice":
+			case "upgrade":
+				altStats.push([<SymbolRenderer symbol="rez-cost" location="cardPreviewStats" />,cardInfo["cost"]]);
+				break;
+			case "operation":
+			case "event":
+			case "resource":
+			case "hardware":
+			case "program":
+				altStats.push([<SymbolRenderer symbol="credit" location="cardPreviewStats" />,cardInfo["cost"]]);
+				break;
+			default: 
+				break;
+		}
+		for (const i of toCheck) {
+			if (cardInfo[i] || cardInfo[i] === 0) {
+				altStats.push([<SymbolRenderer symbol={ i } location="cardPreviewStats" />,cardInfo[i]]);
+			}
+		}
+		
+		
+		//if (cardInfo["base_link"]) altStats.push([<SymbolRenderer symbol="link" />,0]);
+		//let altStats = cardInfo['title'] + "\n";
+		//altStats = (altStats + (cardInfo['uniqueness'] ? "UNIQUE\n" : ""));
+//		altStats = (altStats + cardInfo['type_code'][0].toUpperCase() + cardInfo['type_code'].slice(1) + 
+//			(cardInfo['keywords'] ? ": " + cardInfo['keywords'] : "") + "\n");
+//		altStats += (cardInfo["faction_code"]);
+//		altStats += (cardInfo["faction_cost"] ? " - " + cardInfo["faction_cost"] + " Influence" : "");
+//		altStats += "\n";
+//		switch (cardInfo['type_code']) {
+//			case "agenda":
+//				altStats = (altStats + "Advancement Cost: " + cardInfo['advancement_cost'] + " - Agenda Points: " + cardInfo['agenda_points']);
+//				break;
+//			case "identity":
+//				altStats = (altStats + "Minimum Deck Size: " + cardInfo['minimum_deck_size'] 
+//					+ " - Influence Limit: " + cardInfo['influence_limit']
+//					+ (cardInfo["side_code"] === "runner" ? "\nBase Link: " + cardInfo['base_link'] : ""));
+//				break;
+//			case "operation":
+//			case "event":
+//				altStats = (altStats + "Play Cost: " + cardInfo['cost']);
+//				break;
+//			case "program":
+//				altStats = (altStats + "Install Cost: " + cardInfo['cost'] + " - MU: " + cardInfo['memory_cost']);
+//				altStats = (altStats + (cardInfo['strength'] ? " - Strength: " + cardInfo['strength'] : ""));
+//				break;
+//			case "hardware":
+//			case "resource":
+//				altStats = (altStats + "Install Cost: " + cardInfo['cost']);
+//				break;
+//			case "asset":
+//			case "upgrade":
+//				altStats = (altStats + "Rez Cost: " + cardInfo['cost']);
+//				break;
+//			case "ice":
+//				altStats = (altStats + "Rez Cost: " + cardInfo['cost'] + " - Strength: " + cardInfo['strength']);
+//				break;
+//			default:
+//				break;
+//		}
+//		altStats = (altStats + (cardInfo['trash_cost'] ? "\nTrash Cost:" + cardInfo['trash_cost'] : ""));
+		return altStats;
+	}

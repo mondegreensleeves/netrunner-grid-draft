@@ -1,0 +1,122 @@
+body {
+	font: 14px "Century Gothic", Futura, sans-serif;
+	background: url("background.jpg"); 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.background {
+	background: rgba(0,0,0,.5);
+	background-size: cover;
+	border-radius: 10px;
+	max-height: 95vh;	
+}
+
+ol, ul {
+	padding-left: 30px;
+}
+
+.game {
+	display: flex;
+	width: 100%;
+	height:fill;
+	flex-direction: row;
+	right: 0;
+}
+
+.game-board {
+	display: flex;
+	float: right;
+	height: stretch;
+}
+
+td {
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.game-info {
+	margin-left: 20px;
+}
+
+/* LEFT COLUMN - Current Draft Info, Player Pools */
+.dev-tools {
+	border: 2px solid #999;
+	border-radius: 10px;
+	background: rgba(192,192,192,.8);
+	float: left;
+	text-align: center;
+	width: 30%;
+	height: 95vh;
+}
+
+.dev-buttons {
+	float: top;
+}
+
+.clipboardAlert {
+	z-index: 2;
+	position: absolute;
+	top: 45%;
+	left: 40%;
+	width: 20%;
+	padding: 20px;
+	border-radius: 20px;
+	background: rgba(255,255,255,.8);
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+	transition: opacity .7s;
+	transition-timing-function: ease-in;
+	user-select: none;
+}
+
+.clipboardAlert[data-hidden="true"] { opacity: 0; }
+
+
+/* LEGAL FOOTER */
+.legalFooter {
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	width: stretch;
+	color: rgba(255,255,255,.5);
+	background: rgba(0,0,0,.5);
+	text-align: center;
+}
+
+/* SYMBOL SIZING */
+.symbol {
+	vertical-align: middle;
+	height: 100%;
+	filter: drop-shadow(0 0 2px white);
+}
+
+.legalFooter > .symbol {
+	width: 40px;
+	filter: invert(100%);
+}
+
+.CardPreviewTitle > .symbol {
+	height: 40px;
+}
+
+.CardPreviewStatIcon > .symbol {
+	width:40px;
+}
+
+.CardPreviewTextLine > .symbol,
+.CardPreviewTextLine-li > .symbol,
+.CardPreviewTextLine-strong > .symbol{
+	width: 25px;
+	filter: none;
+	vertical-align: top;
+}
+
+
+
