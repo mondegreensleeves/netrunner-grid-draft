@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import StartMenu from './Common/StartMenu';
+import StartMenu from './StartMenu/StartMenu';
 import DraftBoard from './DraftBoard/DraftBoard';
 import cardPreview from './CardPreview/CardPreview';
 import CardPreviewView from './CardPreview/CardPreviewView';
@@ -38,7 +38,7 @@ class Game extends React.Component {
 			cardPreview: {},
 			identities: [],
 			identitiesReturned: false,
-			playerNames: ["A","B"],
+			playerNames: ["",""],
 			locked: -1,
 			clipboardAlert: <span />
 		};
@@ -49,7 +49,7 @@ class Game extends React.Component {
 		Updates info on right-hand Card Preview pane
 	 */
 	changePreviewImage(i) {
-		this.setState({
+		if (i) this.setState({
 			cardPreview: this.state.cardPoolData.get(i)["altStats"]
 		})
 	}
@@ -317,16 +317,21 @@ class Game extends React.Component {
 		}
 	}
 	
+	/**
+		Locks a card in the grid to the preview pane
+	 */
 	handleLockPreview(card) {
-		this.setState({
-			locked: -1
-		});
-		this.changePreviewImage(this.state.currentPick[card]['code']);
-		if (card !== this.state.locked) {
+		if (this.state.draftInProgress) {
 			this.setState({
-				locked: card
+				locked: -1
 			});
-		} 
+			this.changePreviewImage(this.state.currentPick[card]['code']);
+			if (card !== this.state.locked) {
+				this.setState({
+					locked: card
+				});
+			} 
+		}
 	}
 	
 	handleHover(n) {
@@ -342,15 +347,16 @@ class Game extends React.Component {
 		}	
 	}
 	
-	updateIdentities(identities) {
-		const deckURL = document.getElementById("deckURL").value;
-		const noOfPicks = document.getElementById("noOfPicks").value;
+	updateIdentities(startMenuValues) {
+		const deckURL = startMenuValues["url"];
+		const noOfPicks = startMenuValues["noOfPicks"];
+		const identities = startMenuValues["identities"];
 		if (deckURL) {
-			const player1 = document.getElementById("p1Name").value;
-			const player2 = document.getElementById("p2Name").value;
+			const playerA = startMenuValues["playerAName"];
+			const playerB = startMenuValues["playerBName"];
 			const playerNames = [
-				(player1 ? player1 : "A"),
-				(player2 ? player2 : "B")
+				(playerA ? playerA : "A"),
+				(playerB ? playerB : "B")
 			]
 			this.setState({
 				identities: identities,
@@ -386,6 +392,8 @@ class Game extends React.Component {
 		const lockedCard = this.state.locked
 		const preview = this.state.cardPreview;
 		const clipboardAlert = this.state.clipboardAlert;
+		const playerAName = this.state.playerNames[0];
+		const playerBName = this.state.playerNames[1];
 		
 		return (
 			<div className="background">
@@ -396,7 +404,7 @@ class Game extends React.Component {
 							<DevTool
 								onClick={ this.loadCardsJSON.bind(this) }
 								tag="PrepareDraft"
-								text="Restart Draft"
+								text="New Draft"
 							/>
 							{ identitiesReturned ? <TurnCounter
 								picksLeft={ this.state.numberOfPicks - this.state.pickNumber }
@@ -432,6 +440,8 @@ class Game extends React.Component {
 							identities={ identities }
 							confirm={ this.updateIdentities.bind(this) }
 							onHover={ this.changePreviewImage.bind(this) }
+							playerAName={ playerAName }
+							playerBName={ playerBName }
 						/> : "")}
 					
 				</div>

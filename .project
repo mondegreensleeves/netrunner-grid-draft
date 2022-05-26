@@ -10,11 +10,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>src/images/background.png</name>
-			<type>1</type>
-			<location>C:/Users/mondegreensleeves/netrunner-grid-draft/src/background.png</location>
-		</link>
-		<link>
 			<name>src/images/GameSymbols/background.png</name>
 			<type>1</type>
 			<location>C:/Users/mondegreensleeves/netrunner-grid-draft/src/background.png</location>

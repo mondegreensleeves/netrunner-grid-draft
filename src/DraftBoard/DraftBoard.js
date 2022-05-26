@@ -7,9 +7,15 @@ import Square from './Square.js';
 /**
 	PURPOSE
 	VARIABLES
+		cards:
+		lockedCard
+		takenCards
 	
-	
-	FUNCTIONS	
+	FUNCTIONS
+		onCardHover
+		onClick
+		onClickX
+		onClickY	
  */
 export default class DraftBoard extends React.Component {
 	

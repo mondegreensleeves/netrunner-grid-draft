@@ -5,9 +5,9 @@ import './TurnCounter.css';
 	RENDERS TURN AND PICK INFO
 	
 	VARIABLES
-		picksLeft: #
 		aIsCurrent: t/f
-		playerNames: [name, name]		
+		picksLeft: #
+		playerNames: ["name", "name"]		
  */
 
 export default function TurnCounter(props) {
