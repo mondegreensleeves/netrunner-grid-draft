@@ -13,7 +13,8 @@ Once loaded, players will perform the draft for the set number of rounds, at whi
 **This first version of the site is intended to be used locally or with screen-sharing software.** 
 
 Here are some example drafts that you can use to test its function:
-
+- https://netrunnerdb.com/en/decklist/a3f6150d-73e9-4ff5-97d1-b4701733acc2/grid-draft-tool-example-corp-cube
+- https://netrunnerdb.com/en/decklist/b3e3612c-5c44-41df-a152-6fc5d8d65cc8/grid-draft-tool-example-runner-cube
 
 ### What is a grid draft?
 Grid draft is a game mode of Netrunner (and other card games) where 2 players begin by assembling a large group of cards (known as a "cube"). 
