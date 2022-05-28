@@ -1,5 +1,7 @@
 # Netrunner Grid Draft
 
+[First version up on heroku](https://netrunner-grid-draft.herokuapp.com/)!
+
 ### What is this?
 
 This is a tool for simulating a **Netrunner** grid draft. It is designed with screen-sharing in mind, as the first version was decided to not have networking. In the initial menu, two drafters will be asked for:
