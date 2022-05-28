@@ -19,13 +19,14 @@ import ClipboardAlert from './Common/ClipboardAlert.js';
 class Game extends React.Component {
 	
 	constructor(props) {
+		const firstPlayer = Math.random() < 0.5;
 		super(props);
 		this.state = {
 			history: [{
 				squares: Array(9).fill(null),
 			}],
-			AIsCurrent: true,
-			AWasFirst: true,
+			AIsCurrent: firstPlayer,
+			AWasFirst: firstPlayer,
 			stepNumber: 0,
 			cards: Array(0),
 			playerPools: Array(2).fill(Array(0)),
