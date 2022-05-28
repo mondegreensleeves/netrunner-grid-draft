@@ -7,9 +7,9 @@ import Square from './Square.js';
 /**
 	PURPOSE
 	VARIABLES
-		cards:
-		lockedCard
-		takenCards
+		cards: [cardinfo]
+		lockedCard: 0-8
+		takenCards: [3x1, 6x0]
 	
 	FUNCTIONS
 		onCardHover
