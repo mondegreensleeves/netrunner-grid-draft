@@ -446,7 +446,7 @@ class Game extends React.Component {
 					
 				</div>
 				<p className="legalFooter">
-					CREATED BY MONDE - PROPER LEGAL INFO COMING LATER - ALL IMAGES BELONG TO FFG AND NISEI
+					created by monde - images belong to FFG & NISEI - icons belong to NISEI - not affiliated with either
 				</p>
 			</div>
 		);
