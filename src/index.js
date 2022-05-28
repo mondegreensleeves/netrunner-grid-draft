@@ -114,10 +114,16 @@ class Game extends React.Component {
 					cards: cards,
 					draftInProgress: true
 				});
+				if (this.state.numberOfPicks > cards.length / 9) {
+					this.setState({
+						numberOfPicks: parseInt(cards.length / 9)
+					});
+				}
 				this.nextPick();
 				}
 			);
 		}
+		
 	}
 	
 	/**
