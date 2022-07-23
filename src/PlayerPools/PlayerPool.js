@@ -4,12 +4,12 @@ import React from 'react';
 	RENDER PLAYER POOL AS TEXT BOX
 	
 	VARIABLES
-		player: # player
-		playerPool: [pool]
+		@player # player
+		@playerPool [pool]
 	
 	FUNCTIONS	
-		onClick: copy text
-		onHover: change cardPreview
+		@onClick copy text
+		@onHover change cardPreview
  */
 
 export default function PlayerPool(props) {

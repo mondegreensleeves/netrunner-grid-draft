@@ -133,12 +133,12 @@ class Game extends React.Component {
 		let identities = Array(0);
 		
 		if (this.state.cardPoolData.length === 0) {
-			let deckURL = "./local-cards-JSON.json";
+			let deckURL = "https://netrunnerdb.com/api/2.0/public/cards"
 			fetch(deckURL)
 				.then(response => response.json())
 				.then(data => {	
-					
 					let cards = data['data'];
+					
 					let cardsWithKeys = new Map();
 					let processedIdents = Array(0);
 					cards.map((i) => {
@@ -222,7 +222,6 @@ class Game extends React.Component {
 							this.setState({
 								cards: processedCards
 							});
-							console.log(processedCards);
 						}
 					});
 	}
@@ -277,6 +276,9 @@ class Game extends React.Component {
 		});
 	}
 	
+	/**
+		Assigns selected cards to current player's pool
+	 */
 	handleClick(hor, i) {
 		if (this.state.draftInProgress) {
 			const currentPlayer = this.state.AIsCurrent ? 0 : 1;
@@ -382,13 +384,6 @@ class Game extends React.Component {
 			AIsCurrent: true,
 			AWasFirst: true
 		})
-	}
-	
-	jumpTo(step) {
-		this.setState({
-			stepNumber: step,
-			xIsNext: (step % 2) === 0,			
-		});
 	}
 	
 	render() {

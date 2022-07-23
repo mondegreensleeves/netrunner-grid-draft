@@ -12,7 +12,7 @@ export default class CardPreviewView extends React.Component {
 			<div className="CardPreview">
 				<div className="CardPreviewImgPane">
 					<img className="CardPreviewImg" src={
-						this.props.info.code ? "https://netrunnerdb.com/card_image/large/" + this.props.info.code + ".jpg" : "noCardImage.png"
+						this.props.info.code ? "https://static.nrdbassets.com/v1/large/" + this.props.info.code + ".jpg" : "noCardImage.png"
 					}/>
 				</div>
 				<hr/>

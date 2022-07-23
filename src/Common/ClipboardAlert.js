@@ -6,8 +6,6 @@ export default function ClipboardAlert(props) {
 	
 	useEffect(
 		() => {
-			//setShow(props.active);
-			//setTimeout(() => setShow(false), 100);
 			setShow(false);
 		},
 		[]
