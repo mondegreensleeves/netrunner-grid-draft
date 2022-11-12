@@ -89,7 +89,7 @@ class Game extends React.Component {
 	/**
 		Loads cards from input URL, combines with Identities, and creates draft pool
 	 */
-	loadCards(deckInput1, deckInput2) {
+	loadCards(deckParam) {
 		const cardData = this.state.cardPoolData;
 		var processedCards = Array(0);
 		
@@ -100,7 +100,7 @@ class Game extends React.Component {
 			}
 		}
 		
-		let deckInput = deckInput1;
+		let deckInput = deckParam;
 		if (deckInput) {
 			const deckInputSplit = deckInput.split("/");
 			console.log(deckInput)
@@ -378,11 +378,12 @@ class Game extends React.Component {
 	}
 	
 	resetNumberOfPicks(numberOfPicks) {
+		const rng = Math.random() < 0.5
 		this.setState({
 			numberOfPicks: numberOfPicks + 1,
 			pickNumber: 0,
-			AIsCurrent: true,
-			AWasFirst: true
+			AIsCurrent: rng,
+			AWasFirst: rng
 		})
 	}
 	
@@ -448,7 +449,7 @@ class Game extends React.Component {
 					
 				</div>
 				<p className="legalFooter">
-					created by monde - images belong to FFG & NISEI - icons belong to NISEI - not affiliated with either
+					created by monde | card images & text: null signal games, fantasy flight games | icons by NSG | bg: "ubiquitous vig" by adam s. doyle
 				</p>
 			</div>
 		);
