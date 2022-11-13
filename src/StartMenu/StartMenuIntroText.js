@@ -15,7 +15,7 @@ export default function StartMenuIntroText() {
 						This is a tool I put together to learn ReactJS, built to 
 						emulate a <a target="_blank" href="https://strategy.channelfireball.com/all-strategy/mtg/channelmagic-articles/cube-design-grid-drafting-and-more/">
 							 grid draft 
-						</a> using Netrunner and NISEI cards. Just paste a deck's <a target="_blank" href="https://netrunnerdb.com">
+						</a> using Netrunner cards. Just paste a deck's <a target="_blank" href="https://netrunnerdb.com">
 							netrunnerdb.com
 						</a> URL below, choose how many picks you want,
 						and even add some Identities if you feel like it!
